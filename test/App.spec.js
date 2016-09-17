@@ -14,13 +14,13 @@ describe('404 on nonexistent URL', () => {
 });
 
 describe('GET /', () => {
-  it('should return Hola', (done) => {
+  it('should return index', (done) => {
     request(app)
       .get('/')
       .expect(200)
       .expect('Content-Type', 'text/html; charset=utf-8')
       .end((err, res) => {
-        expect(res.text).to.equal('Hola')
+        expect(res.text).to.include('<h1>Index Page</h1>');
         done();
       });
   });

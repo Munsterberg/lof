@@ -5,13 +5,15 @@ import path from 'path';
 
 const app = express();
 
+app.set('views', path.join(__dirname, '/views'));
+app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '/../public')));
 app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
-  res.send('Hola');
+  res.render('index');
 });
 
 app.use((err, req, res, next) => {
