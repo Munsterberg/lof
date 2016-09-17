@@ -14,13 +14,26 @@ describe('404 on nonexistent URL', () => {
 });
 
 describe('GET /', () => {
-  it('should return index', (done) => {
+  it('should return index page', (done) => {
     request(app)
       .get('/')
       .expect(200)
       .expect('Content-Type', 'text/html; charset=utf-8')
       .end((err, res) => {
         expect(res.text).to.include('<h1>Index Page</h1>');
+        done();
+      });
+  });
+});
+
+describe('GET /summoner', () => {
+  it('should return summoner page', (done) => {
+    request(app)
+      .get('/summoner')
+      .expect(200)
+      .expect('Content-Type', 'text/html; charset=utf-8')
+      .end((err, res) => {
+        expect(res.text).to.include('Summoner Page');
         done();
       });
   });
