@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/summoner', (req, res) => {
-  res.send('Summoner Page');
+  res.render('summoner', {title: 'Summoner Lookup'});
 });
 
 export default router;

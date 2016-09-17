@@ -33,7 +33,7 @@ describe('GET /summoner', () => {
       .expect(200)
       .expect('Content-Type', 'text/html; charset=utf-8')
       .end((err, res) => {
-        expect(res.text).to.include('Summoner Page');
+        expect(res.text).to.include('<h1>Summoner Page</h1>');
         done();
       });
   });
