@@ -1,10 +1,10 @@
-extends layout
+extends ../layout
 
 block content
   h1 Summoner Lookup
-  form
+  form(method='post')
     .col-md-6
       .form-group
         label(for='summoner') Summoner Name
-        input.form-control#summoner(placeholder='Munsterberg')
+        input.form-control#summoner(placeholder='Munsterberg', name='summoner')
       button.btn.btn-primary(type='Submit') Search

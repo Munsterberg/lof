@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+  h2= summonerInfo.name
+  h3= summonerInfo.summonerLevel
+  img(src='http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/' + summonerInfo.profileIconId + '.png ')
