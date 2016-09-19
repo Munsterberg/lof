@@ -23,7 +23,7 @@ router.get('/summoner', (req, res) => {
       res.render('summoner/player', {summonerInfo: summonerObj, title: summonerObj.name});
     } else {
       console.log('A summoner was not found!');
-      res.redirect('/summoner');
+      res.redirect('/lookup');
     }
   });
 });
