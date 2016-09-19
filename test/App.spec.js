@@ -43,14 +43,12 @@ describe('GET /summoner', () => {
   });
 });
 
-describe('POST /summoner', () => {
+describe('GET /player', () => {
   it('should return info about summoner', (done) => {
     request(app)
-      .post('/summoner')
-      .send({
-        summoner: 'Munsterberg'
-      })
+      .get('/player?summoner=Munsterberg')
       .expect(200)
+      .expect('Content-Type', 'text/html; charset=utf-8')
       .end((err, res) => {
         const actualBody = res.text;
 
