@@ -7,4 +7,24 @@ block content
       .form-group
         label(for='summoner') Summoner Name
         input.form-control#summoner(placeholder='Munsterberg', name='summoner')
+      .radio
+        label
+          input(type='radio' name='region' value='na')
+          | NA
+      .radio
+        label
+          input(type='radio' name='region' value='euw')
+          | EUW
+      .radio
+        label
+          input(type='radio' name='region' value='eune')
+          | EUNE
+      .radio
+        label
+          input(type='radio' name='region' value='br')
+          | BR
+      .radio
+        label
+          input(type='radio' name='region' value='lan')
+          | LAN
       button.btn.btn-primary(type='Submit') Search

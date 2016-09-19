@@ -47,7 +47,7 @@ describe('GET /lookup', () => {
 describe('GET /summoner', () => {
   it('should return info about summoner', (done) => {
     request(app)
-      .get('/summoner?summoner=Munsterberg')
+      .get('/summoner?summoner=Munsterberg&region=na')
       .expect(200)
       .expect('Content-Type', 'text/html; charset=utf-8')
       .end((err, res) => {
