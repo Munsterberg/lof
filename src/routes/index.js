@@ -7,11 +7,11 @@ router.get('/', (req, res) => {
   res.render('index', {title: 'Home'});
 });
 
-router.get('/summoner', (req, res) => {
+router.get('/lookup', (req, res) => {
   res.render('summoner/summoner', {title: 'Summoner Lookup'});
 });
 
-router.get('/player', (req, res) => {
+router.get('/summoner', (req, res) => {
   const summonerName = req.query.summoner.toLowerCase().replace(/\s+/g, '');
   const apiKey = 'c90e16ea-74ce-4e96-8a3b-d8a4ba3449fa';
   const summonerUrl = `https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/${summonerName}?api_key=${apiKey}`; // eslint-disable-line

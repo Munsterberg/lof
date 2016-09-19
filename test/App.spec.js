@@ -28,10 +28,10 @@ describe('GET /', () => {
   });
 });
 
-describe('GET /summoner', () => {
+describe('GET /lookup', () => {
   it('should return summoner page', (done) => {
     request(app)
-      .get('/summoner')
+      .get('/lookup')
       .expect(200)
       .expect('Content-Type', 'text/html; charset=utf-8')
       .end((err, res) => {
@@ -43,10 +43,10 @@ describe('GET /summoner', () => {
   });
 });
 
-describe('GET /player', () => {
+describe('GET /summoner', () => {
   it('should return info about summoner', (done) => {
     request(app)
-      .get('/player?summoner=Munsterberg')
+      .get('/summoner?summoner=Munsterberg')
       .expect(200)
       .expect('Content-Type', 'text/html; charset=utf-8')
       .end((err, res) => {
