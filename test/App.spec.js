@@ -38,6 +38,7 @@ describe('GET /lookup', () => {
         const actualBody = res.text;
 
         expect(actualBody).to.include('<h1>Summoner Lookup</h1>');
+        expect(actualBody).to.include('<form method="get" action="/summoner">');
         done();
       });
   });
