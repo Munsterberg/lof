@@ -20,7 +20,9 @@ describe('GET /', () => {
       .expect(200)
       .expect('Content-Type', 'text/html; charset=utf-8')
       .end((err, res) => {
-        expect(res.text).to.include('<h1>Index Page</h1>');
+        const actualBody = res.text;
+
+        expect(actualBody).to.include('<h1>Index Page</h1>');
         done();
       });
   });
@@ -33,7 +35,27 @@ describe('GET /summoner', () => {
       .expect(200)
       .expect('Content-Type', 'text/html; charset=utf-8')
       .end((err, res) => {
-        expect(res.text).to.include('<h1>Summoner Page</h1>');
+        const actualBody = res.text;
+
+        expect(actualBody).to.include('<h1>Summoner Lookup</h1>');
+        done();
+      });
+  });
+});
+
+describe('POST /summoner', () => {
+  it('should return info about summoner', (done) => {
+    request(app)
+      .post('/summoner')
+      .send({
+        summoner: 'Munsterberg'
+      })
+      .expect(200)
+      .end((err, res) => {
+        const actualBody = res.text;
+
+        expect(actualBody).to.include('<h2>Munsterberg</h2>');
+        expect(actualBody).to.include('<h3>30</h3>');
         done();
       });
   });
